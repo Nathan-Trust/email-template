@@ -1,3 +1,23 @@
+const ejs = require("ejs");
+const fs = require("fs");
+const path = require("path");
+
+// Function to compile EJS template
+function compileTemplate(templateName, data) {
+  const templatePath = path.resolve(__dirname, `${templateName}.ejs`);
+  const templateContent = fs.readFileSync(templatePath, "utf8");
+  return ejs.render(templateContent, data);
+}
+
+// Example usage
+const headerContent = compileTemplate("header", {
+  /* pass any necessary data */
+});
+const footerContent = compileTemplate("footer", {
+  /* pass any necessary data */
+});
+
+const emailContent = `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -83,7 +103,7 @@
                   <tr>
                     <td style="width: 100%" class="padding">
                       <!-- header starts here -->
-                    <!-- header -->
+                     ${headerContent}
                       <!-- header ends here  -->
                       <br />
                       <span style="font-weight: 600; font-size: 17px; font-family: 'Poppins' , sans-serif;" 
@@ -176,8 +196,7 @@
                 </table>
               </td>
             </tr>
-<!-- footer startss here -->
-          <!-- footer -->
+   ${footerContent} 
             <!-- footer ends here -->
           </table>
         </td>
@@ -185,3 +204,6 @@
     </table>
   </body>
 </html>
+`;
+
+console.log(emailContent); // Output or send the emailContent as needed
