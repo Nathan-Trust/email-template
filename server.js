@@ -31,9 +31,22 @@ app.get("/email", async (req, res) => {
       }
     );
 
+      const mainContent = await ejs.renderFile(
+        path.join(__dirname, "content.ejs"),
+        {
+          /* data object if needed */
+        }
+      );
+
+        const copyrightContent = await ejs.renderFile(
+        path.join(__dirname, "copyright.ejs"),
+        {
+          /* data object if needed */
+        }
+      );
     // Combine header, footer, and email content into a complete HTML email template
     const emailContent = `
-     <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -119,99 +132,21 @@ app.get("/email", async (req, res) => {
                     <td style="width: 100%" class="padding">
                       <!-- header starts here -->
                       ${headerContent}
-                      <!-- header ends here  -->
-                      <br />
-                      <span style="font-weight: 600; font-size: 17px; font-family: 'Poppins' , sans-serif;" 
-                        >Hello Chris,</span
-                      >
-                      <br /> <br>
-                      <span
-                        style="
-                        margin-top: 120px;
-                          font-size: 12.2px;
-                          line-height: 20px;
-                           font-family: 'Poppins' , sans-serif;
-                        "
-                      >
-                        Thank you for submiting your KYC documents for upgrade.
-                        Unfortunately your upgrade request has been declined
-                        because we were unable to verify your document. Please
-                        ensure that there is not mismatch while providing your
-                        document
-                      </span>
-
-                      <br />
-                      <br />
-                      <span
-                        style="
-                          font-size: 12px;
-                          line-height: 20px;
-                          font-family: 'Poppins' , sans-serif;
-                        "
-                      >
-                        Contact our support channel at
-                        <span style="color: #3849e3;cursor: pointer; text-decoration: underline"
-                          >support@boundlesspay.com</span
-                        >
-                        or call our customer careline at +234 584 213 1209 ,
-                        +234 584 213 1209
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="
-                        padding: 40px;
-                        text-align: center;
-                        /* font-size: 24px; */
-                        width: 100%;
-                        padding: 1px;
-                        /* padding: 10px; */
-                      "
-                      class="padding"
-                    >
-                      <table
-                        cellspacing="0"
-                        cellpadding="0"
-                        style="
-                          margin: auto;
-                          width: 100%;
-                          padding: 10px 0px 10px 0px;
-                          text-align: start;
-                          border-radius: 10px;
-                          color: #000;
-                        "
-                      >
-                        <tr>
-                          <td
-                            style="
-                              border-bottom: 1px dashed #99999e;
-                              height: 6px;
-                            "
-                          ></td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="font-size: 10px; font-weight: 450; color: #909096"
-                      class="padding"
-                    >
-                      <span style="line-height: 20px">
-                        You are recieving this message because you signed up on
-                        Boundless pay. For more information about how we process
-                        data , please see our privacy policy
-                      </span>
-                      <br />
-                      <br /><br />
-                      Copyright&copy;Boundlesspay.2024 All right reserved.
+                      <!-- header ends here -->
+                      <!-- content starts here -->
+                      ${mainContent}
+                      <!-- content ends here -->
+                      <!-- copyright starts here -->
+                      ${copyrightContent}
+                      <!-- copyright ends here -->
                     </td>
                   </tr>
                 </table>
               </td>
             </tr>
-          ${footerContent}
+            <!-- footer -->
+            ${footerContent}
+            <!-- footer -->
           </table>
         </td>
       </tr>
