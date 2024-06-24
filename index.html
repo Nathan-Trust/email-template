@@ -1,73 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email-Template</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      @media screen and (max-width: 600px) {
-        .content {
-          width: 100% !important;
-          display: block !important;
-          /* padding: 10px !important; */
-        }
-        .header,
-        .body,
-        .footer {
-          padding: 10px !important;
-        }
-        table {
-          width: 100%;
-          border-collapse: collapse;
-        }
-        .rightTd {
-          display: none;
-        }
-        .inner-table {
-          padding: 10px;
-        }
-        .padding {
-          padding: 10px !important;
-        }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email-Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/e2730bd9f0.js" crossorigin="anonymous"></script>
+  <style>
+    @font-face {
+      font-family: 'Graphik Thin';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphikthin-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Graphik Super';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphiksuper-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Graphik Semibold';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphiksemibold-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Repeat the above @font-face rules for each font */
+
+    /* Example for GraphikRegular */
+    @font-face {
+      font-family: 'Graphik Regular';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphikregular-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Example for GraphikMedium */
+    @font-face {
+      font-family: 'Graphik Medium';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphikmedium-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Example for GraphikLight */
+    @font-face {
+      font-family: 'Graphik Light';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphiklight-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Example for GraphikExtraLight */
+    @font-face {
+      font-family: 'Graphik ExtraLight';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphikextralight-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Example for GraphikBold */
+    @font-face {
+      font-family: 'Graphik Bold';
+      src: url('https://nathan-trust.github.io/web-font-upload/graphikbold-webfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+
+    @media screen and (max-width: 600px) {
+      .content {
+        width: 100% !important;
+        display: block !important;
+        /* padding: 10px !important; */
       }
-    </style>
-  </head>
-  <body style="font-family: 'Inter', sans-serif">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td align="center">
-          <table
-            class="content"
-            width="700"
-            border="0"
-            cellspacing="0"
-            cellpadding="0"
-            style="
+
+      .header,
+      .body,
+      .footer {
+        padding: 10px !important;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .rightTd {
+        display: none;
+      }
+
+      .inner-table {
+        padding: 10px;
+      }
+
+      .padding {
+        padding: 10px !important;
+      }
+    }
+  </style>
+</head>
+
+<body style=" font-family: 'Graphik Regular', sans-serif;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center">
+        <table class="content" width="700" border="0" cellspacing="0" cellpadding="0" style="
               border-collapse: collapse;
               border-radius: 4px;
-              background-color: #f3f6ff;
-            "
-          >
-            <tr>
-              <td
-                class="header"
-                style="
+              background-color: #f6f6f6;
+            ">
+          <tr>
+            <td class="header" style="
                   /* padding: 40px; */
                   text-align: center;
                   padding: 60px 70px 0px 70px;
-                "
-              >
-                <!-- CTA Button -->
-                <table
-                  cellspacing="0"
-                  cellpadding="0"
-                  style="
+                ">
+              <!-- CTA Button -->
+              <table cellspacing="0" cellpadding="0" style="
                     /* margin: auto; */
                     background-color: #fff;
                     width: 100%;
@@ -77,19 +135,12 @@
                     border-radius: 10px;
                     border: 1px solid #ebebf0;
                     color: #000;
-                  "
-                  class="inner-table"
-                >
-                  <tr>
-                    <td style="width: 100%" class="padding">
-                      <table
-                        cellspacing="0"
-                        cellpadding="0"
-                        style="width: 100%"
-                      >
-                        <tr>
-                          <td
-                            style="
+                  " class="inner-table">
+                <tr>
+                  <td style="width: 100%" class="padding">
+                    <table cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td style="
                               color: #3849e3;
                               font-size: 17px;
                               font-weight: 600;
@@ -97,179 +148,128 @@
                               height: 6px;
                               width: 100%;
                               padding: 0px 0px 10px 0px;
-                            "
-                          >
-                            <table
-                              width="100%"
-                              border="0"
-                              cellspacing="0"
-                              cellpadding="0"
-                              style="border-collapse: collapse"
-                            >
-                              <tr>
-                                <td
-                                  align="left"
-                                  valign="middle"
-                                  style="padding: 0; margin: 0; border: none"
-                                >
-                                  <img
-                                    src="https://i.ibb.co/wLVgwrv/randomimg.png"
-                                    alt="randomimg"
-                                    border="0"
-                                    style="
+                            ">
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                            style="border-collapse: collapse">
+                            <tr>
+                              <td align="left" valign="middle" style="padding: 0; margin: 0; border: none">
+                                <img src="https://i.ibb.co/wLVgwrv/randomimg.png" alt="randomimg" border="0" style="
                                       display: inline-block;
                                       vertical-align: middle;
                                       padding: 0;
                                       margin: 0;
-                                    "
-                                  /><span
-                                    style="
+                                    " /><span style="
                                       display: inline-block;
                                       vertical-align: middle;
                                       font-size: 17px;
                                       font-weight: 600;
                                       color: #3849e3;
-                                    "
-                                    >BoundlessPay</span
-                                  >
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                      <br />
-                      <span style="font-weight: 600; font-size: 17px; font-family: 'Poppins' , sans-serif;" 
-                        >Your Approval code</span
-                      >
-                      <br  />
-                      <div style="margin: 15px 0;" />
-                      <span
-                        style="
+                                    ">BoundlessPay</span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <br />
+                    <span style="font-weight: 600; font-size: 17px; font-family: 'Graphik Regular', sans-serif; ">Your
+                      Approval code</span>
+                    <br />
+                    <div style="margin: 15px 0;" />
+                    <span style="
                           font-size: 12.2px;
                            font-family: 'Poppins' , sans-serif;
-                        "
-                      >
-                       Use the code to verify your account
-                      </span>
+                        ">
+                      Use the code to verify your account
+                    </span>
 
-                      <br  />
-                      <div style="margin: 15px 0;" />
-                       <table
-                        cellspacing="0"
-                        cellpadding="0"
-                        style="width: 100%"
-                      >
-                        <tr>
-                          <td
-                            style="
+                    <br />
+                    <div style="margin: 15px 0;" />
+                    <table cellspacing="0" cellpadding="0" style="width: 100%">
+                      <tr>
+                        <td style="
                               color: #3849e3;
                               font-size: 20px;
                               font-weight: 700;
-                              font-family: 'Inter', sans-serif;                              height: 6px;
+                              font-family: 'Graphik Medium', sans-serif;                              height: 6px;
                               width: 100%;
                               padding: 10px 0px 10px 0px;
-                            "
-                          >
-                            392312
-                          </td>
-                        </tr>
-                      </table>
-                        <div style="margin: 8px 0;" />
- <span
-                        style="
+                            ">
+                          392312
+                        </td>
+                      </tr>
+                    </table>
+                    <div style="margin: 8px 0;" />
+                    <span style="
                           font-size: 12.2px;
-                           font-family: 'Poppins' , sans-serif;
-                        "
-                      >
-                       This one line code expires in 75 minutes. Do not share
-                        this code with anyone .
-                      </span>
-                      <br><br>
-                      <span
-                        style="
+                          font-family: 'Graphik Regular', sans-serif;                        ">
+                      This one line code expires in 75 minutes. Do not share
+                      this code with anyone .
+                    </span>
+                    <br><br>
+                    <span style="
                           font-size: 12px;
                           line-height: 20px;
                           font-family: 'Poppins' , sans-serif;
-                        "
-                      >
-                        Contact our support channel at
-                        <span style="color: #3849e3;cursor: pointer; text-decoration: underline"
-                          >support@boundlesspay.com</span
-                        >
-                        or call our customer careline at +234 584 213 1209 ,
-                        +234 584 213 1209
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="
+                        ">
+                      Contact our support channel at
+                      <span
+                        style="color: #3849e3;cursor: pointer; text-decoration: underline">support@boundlesspay.com</span>
+                      or call our customer careline at +234 584 213 1209 ,
+                      +234 584 213 1209
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="
                         padding: 40px;
                         text-align: center;
                         /* font-size: 24px; */
                         width: 100%;
                         padding: 1px;
                         /* padding: 10px; */
-                      "
-                      class="padding"
-                    >
-                      <table
-                        cellspacing="0"
-                        cellpadding="0"
-                        style="
+                      " class="padding">
+                    <table cellspacing="0" cellpadding="0" style="
                           margin: auto;
                           width: 100%;
                           padding: 10px 0px 10px 0px;
                           text-align: start;
                           border-radius: 10px;
                           color: #000;
-                        "
-                      >
-                        <tr>
-                          <td
-                            style="
+                        ">
+                      <tr>
+                        <td style="
                               border-bottom: 1px dashed #99999e;
                               height: 6px;
-                            "
-                          ></td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="font-size: 10px; font-weight: 450; color: #909096"
-                      class="padding"
-                    >
-                      <span style="line-height: 20px">
-                        You are recieving this message because you signed up on
-                        Boundless pay. For more information about how we process
-                        data , please see our privacy policy
-                      </span>
-                      <br />
-                      <br /><br />
-                      Copyright&copy;Boundlesspay.2024 All right reserved.
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
+                            "></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-size: 11px; font-weight: 450; color: #909096" class="padding">
+                    <span style="line-height: 20px">
+                      You are recieving this message because you signed up on
+                      Boundless pay. For more information about how we process
+                      data , please see our privacy policy
+                    </span>
+                    <br />
+                    <br />
+                    Copyright&copy;Boundlesspay.2024 All right reserved.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-            <tr>
-              <td
-                class="header"
-                style="
+          <tr>
+            <td class="header" style="
                   padding: 40px;
                   text-align: center;
                   /* font-size: 24px; */
                   padding: 8px 70px 20px 70px;
-                "
-              >
-                <table
-                  cellspacing="0"
-                  cellpadding="0"
-                  style="
+                ">
+              <table cellspacing="0" cellpadding="0" style="
                     margin: auto;
                     background-color: #fff;
                     border: 1px solid #ebebf0;
@@ -279,225 +279,178 @@
                     text-align: start;
                     border-radius: 10px;
                     color: #000;
-                  "
-                >
-                  <tr>
-                    <td
-                      style="width: 50%; padding: 20px 0px 20px 20px"
-                      class="padding"
-                    >
-                      <span style="font-weight: 600; font-size: 17px; font-family: 'Poppins' , sans-serif;line-height: 22px;">
-                        Your gateway to</span
-                      >
-                      <br />
-                      <span style="font-weight: 600; font-size: 17px; font-family: 'Poppins' , sans-serif;line-height: 22px;"
-                        >financial success</span
-                      >
-                      <br />
-                      <span
-                        style="
+                  ">
+                <tr>
+                  <td style="width: 50%; padding: 20px 0px 20px 20px" class="padding">
+                    <span
+                      style="font-weight: 600; font-size: 17px; font-family: 'Poppins' , sans-serif;line-height: 22px;">
+                      Your gateway to</span>
+                    <br />
+                    <span
+                      style="font-weight: 600; font-size: 17px; font-family: 'Poppins' , sans-serif;line-height: 22px;">financial
+                      success</span>
+                    <br />
+                    <span style="
                         margin-top: 14px;
                           font-size: 12px;
                           font-family: 'Poppins', sans-serif;
                           line-height: 4px;
-                        "
-                      >
-                        Get our mobile app on any device you <br />use on App
-                        store or Google Playstore</span
-                      >
-                      <br />
-                      <br />
-                      <table cellspacing="0" cellpadding="0"  style="width: 240px;">
-                        <tr>
-                          <td
-                            style="
+                        ">
+                      Get our mobile app on any device you <br />use on App
+                      store or Google Playstore</span>
+                    <br />
+                    <br />
+                    <table cellspacing="0" cellpadding="0" style="width: 240px;">
+                      <tr>
+                        <td style="
                               background-color: #000;
                               padding: 2px 8px;
                               border-radius: 3px;
                               width: 33%;
                               cursor: pointer;
-                            "
-                          >
-                            <table
-                              cellspacing="0"
-                              cellpadding="0"
-                              style="width: 100%"
-                            >
-                              <tr>
-                                <td
-                                  style="
+                            ">
+                          <table cellspacing="0" cellpadding="0" style="width: 100%">
+                            <tr>
+                              <td style="
                                     color: #fff;
                                     font-size: 9px;
                                     font-weight: 600;
                                     height: 6px;
                                     width: 25%;
-                                  "
-                                >
-                                  <img
-                                    src="https://i.ibb.co/ZG6XMhM/playstore.png"
-                                    alt="playstore"
-                                    border="0"
-                                    style="
+                                  ">
+                                <img src="https://i.ibb.co/ZG6XMhM/playstore.png" alt="playstore" border="0" style="
                                       display: inline-block;
                                       vertical-align: middle;
                                       padding: 0;
                                       margin: 0;
-                                    "
-                                  />
-                                  <span
-                                    style="
+                                    " />
+                                <span style="
                                       display: inline-block;
                                       vertical-align: middle;
                                       font-size: 7px;
                                       font-weight: 600;
                                       color: #fff;
                                       margin-left: 7px;
-                                    "
-                                  >
-                                    GET IT ON <br />
-                                    <span style="font-size: 12px">
-                                      Google Play</span
-                                    ></span
-                                  >
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td style="width: 3%"></td>
-                          <td
-                            style="
+                                    ">
+                                  GET IT ON <br />
+                                  <span style="font-size: 12px">
+                                    Google Play</span></span>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="width: 3%"></td>
+                        <td style="
                               background-color: #000;
                                                             cursor: pointer;
                               padding: 2px 8px;
                               border-radius: 3px;
                               width: 32%;
-                            "
-                          >
-                            <table
-                              cellspacing="0"
-                              cellpadding="0"
-                              style="width: 100%"
-                            >
-                              <tr>
-                                <td
-                                  style="
+                            ">
+                          <table cellspacing="0" cellpadding="0" style="width: 100%">
+                            <tr>
+                              <td style="
                                     color: #fff;
                                     font-size: 9px;
                                     font-weight: 600;
                                     height: 6px;
                                     width: 45%;
-                                  "
-                                >
-                                
-                                  <img
-                                    src="https://i.ibb.co/z6JPfTQ/apple-Icon.png"
-                                    alt="apple-Icon"
-                                    border="0"
-                                     style="
+                                  ">
+
+                                <img src="https://i.ibb.co/z6JPfTQ/apple-Icon.png" alt="apple-Icon" border="0" style="
                                       display: inline-block;
                                       vertical-align: middle;
                                       padding: 0;
                                       margin: 0;
-                                    "
-                                  />  <span
-                                    style="
+                                    " /> <span style="
                                       display: inline-block;
                                       vertical-align: middle;
                                       font-size: 7px;
                                       font-weight: 600;
                                       color: #fff;
                                       margin-left: 7px;
-                                    "
-                                  >
-                                    Download on the <br />
+                                    ">
+                                  Download on the <br />
                                   <span style="font-size: 12px">
                                     App Store
                                   </span>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                    <td style="width: 3%"></td>
-                    <td
-                      style="padding-left: 10px;  height: 100%"
-                      class="rightTd"
-                    >
-                      <table>
-                        <tr>
-                          <td>
-                            <img
-                              style="width: 100%; height: 100%"
-                              src="https://i.ibb.co/2MJzSKX/Frame-1756.png" 
--                              alt="Screen-Shot-2024-06-09-at-5-49-15-PM"
-                              border="0"
-                            />
-                          </td>
-                        </tr>
-                      </table>
-                      <!-- Content for the second item -->
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0px 40px 0px 40px; text-align: center">
-                <table cellspacing="0" cellpadding="0" style="margin: auto">
-                  <tr>
-                    <td style="text-align: center;">
-                      <a href="#" target="_blank" rel="noopener noreferrer" style="cursor: pointer;text-decoration: none;">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td style="width: 3%"></td>
+                  <td style="padding-left: 10px;  height: 100%" class="rightTd">
+                    <table>
+                      <tr>
+                        <td>
+                          <img style="width: 100%; height: 100%" src="https://i.ibb.co/2MJzSKX/Frame-1756.png" -
+                            alt="Screen-Shot-2024-06-09-at-5-49-15-PM" border="0" />
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- Content for the second item -->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0px 40px 0px 40px; text-align: center">
+              <table cellspacing="0" cellpadding="0" style="margin: auto">
+                <tr style="border: 1px solid black;">
+                  <td style="text-align: center;vertical-align: middle;">
+                    <a href="https://www.facebook.com/boundlesspayofficial/" target="_blank" rel="noopener noreferrer"
+                      style="cursor: pointer;text-decoration: none;">
+                      <img src="https://i.ibb.co/BPK3VT7/facebook-app-symbol.png" alt="facebook-app-symbol"
+                        style="height: 20px;margin-top: 2px;" border="0">
+                    </a>
+                  </td>
+                  <td style="width: 10%"></td>
+                  <td style="text-align: center;vertical-align: middle;">
+                    <a href="https://twitter.com/boundlesspay" target="_blank" rel="noopener noreferrer"
+                      style="cursor: pointer;text-decoration: none;">
+                      <img src="https://i.ibb.co/XtxVBQG/twitter.png" alt="twitter"
+                        style="height: 20px;margin-top: 2px;" border="0">
+                    </a>
+                  </td>
+                  <td style="width: 10%"></td>
+                  <td style="text-align: center;vertical-align: middle;">
+                    <a href="https://www.instagram.com/boundlesspay/" target="_blank" rel="noopener noreferrer"
+                      style="cursor: pointer;text-decoration: none;">
+                      <img src="https://i.ibb.co/5FWHsL0/instagram.png" style="height: 20px;margin-top: 2px;"
+                        alt="instagram" border="0"> </a>
+                  </td>
+                  <td style="width: 10%"></td>
+                  <td style="text-align: center;vertical-align: middle;">
+                    <a href="https://www.linkedin.com/company/boundlesspayofficial/" target="_blank" rel="noopener noreferrer"
+                      style="cursor: pointer;text-decoration: none;">
+                      <!-- <i class="fa-brands fa-linkedin-in fa-lg" style="color: #9ca5b6;"></i> -->
+                      <img src="https://i.ibb.co/c1m2Kxx/linkedin.png" alt="linkedin" border="0">
+                    </a>
+                  </td>
+                  <td style="width: 10%"></td>
+                  <td style="vertical-align: middle;">
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                      style="cursor: pointer;text-decoration: none;">
+                      <img src="https://i.ibb.co/h177p6k/youtube-3.png" alt="youtube-3" style="margin-top: 1px;" border="0"> </a>
+                  </td>
+                </tr>
 
-                      <img src="https://i.ibb.co/9N929jk/Screen-Shot-2024-06-09-at-6-54-25-PM.png" width="24" height="24" alt="icons8-facebook-50" border="0" />
-                      </a>
-                    </td>
-                    <td style="width: 10%"></td>
-                    <td style="text-align: center;">
-                      <a href="#" target="_blank" rel="noopener noreferrer" style="cursor: pointer;text-decoration: none;">
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 40px 20px 40px; text-align: center">
+              <table cellspacing="0" cellpadding="0" style="margin: auto"></table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
 
-                      <img src="https://i.ibb.co/hFWsMXS/twitter.png" width="24" height="24" alt="icons8-x-50" border="0" />
-                      </a>
-                    </td>
-                    <td style="width: 10%"></td>
-                    <td style="text-align: center;">
-                      <a href="#" target="_blank" rel="noopener noreferrer" style="cursor: pointer;text-decoration: none;">
-
-                      <img src="https://i.ibb.co/vmd1mmS/ig.png" width="24" height="24" alt="icons8-instagram-50" border="0" />
-                      </a>
-                    </td>
-                    <td style="width: 10%"></td>
-                    <td style="text-align: center;">
-                      <a href="#" target="_blank" rel="noopener noreferrer" style="cursor: pointer;text-decoration: none;">
-
-                      <img src="https://i.ibb.co/9vWjGV5/Screen-Shot-2024-06-09-at-6-50-15-PM.png" width="24" height="24" alt="icons8-linkedin-50" border="0" />
-                      </a>
-                    </td>
-                    <td style="width: 10%"></td>
-                    <td style="text-align: center;">
-                      <a href="#" target="_blank" rel="noopener noreferrer" style="cursor: pointer;text-decoration: none;">
-
-                      <img src="https://i.ibb.co/QrWnPq6/Screen-Shot-2024-06-09-at-6-53-13-PM.png" width="24" height="24" alt="icons8-youtube-50" border="0" />
-                      </a>
-                    </td>
-                  </tr>
-                  
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 10px 40px 20px 40px; text-align: center">
-                <table
-                  cellspacing="0"
-                  cellpadding="0"
-                  style="margin: auto"
-                ></table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </body>
 </html>
