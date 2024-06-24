@@ -45,6 +45,34 @@ app.get("/email", async (req, res) => {
         }
       );
     // Combine header, footer, and email content into a complete HTML email template
+
+    const kycContent = await ejs.renderFile(
+      path.join(__dirname, "kyc.ejs"),
+      {
+        /* data object if needed */
+      }
+    );
+
+
+
+        const usdtDepositContent = await ejs.renderFile(
+          path.join(__dirname, "usdt-deposit.ejs"),
+          {
+            /* data object if needed */
+          }
+        );
+    
+    
+        const approvalContent = await ejs.renderFile(
+          path.join(__dirname, "your-approval.ejs"),
+          {
+            /* data object if needed */
+          }
+        );
+    
+
+
+
     const emailContent = `
     <!DOCTYPE html>
 <html lang="en">
@@ -59,34 +87,111 @@ app.get("/email", async (req, res) => {
       rel="stylesheet"
     />
     <style>
+      @font-face {
+        font-family: "Graphik Thin";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphikthin-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Graphik Super";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphiksuper-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Graphik Semibold";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphiksemibold-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* Repeat the above @font-face rules for each font */
+
+      /* Example for GraphikRegular */
+      @font-face {
+        font-family: "Graphik Regular";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphikregular-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* Example for GraphikMedium */
+      @font-face {
+        font-family: "Graphik Medium";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphikmedium-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* Example for GraphikLight */
+      @font-face {
+        font-family: "Graphik Light";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphiklight-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* Example for GraphikExtraLight */
+      @font-face {
+        font-family: "Graphik ExtraLight";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphikextralight-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* Example for GraphikBold */
+      @font-face {
+        font-family: "Graphik Bold";
+        src: url("https://nathan-trust.github.io/web-font-upload/graphikbold-webfont.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
       @media screen and (max-width: 600px) {
         .content {
           width: 100% !important;
           display: block !important;
           /* padding: 10px !important; */
         }
+
         .header,
         .body,
         .footer {
           padding: 10px !important;
         }
+
         table {
           width: 100%;
           border-collapse: collapse;
         }
+
         .rightTd {
           display: none;
         }
+
         .inner-table {
           padding: 10px;
         }
+
         .padding {
           padding: 10px !important;
         }
       }
     </style>
   </head>
-  <body style="font-family: 'Inter', sans-serif">
+
+  <body style="font-family: 'Graphik Regular', sans-serif">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td align="center">
@@ -99,10 +204,11 @@ app.get("/email", async (req, res) => {
             style="
               border-collapse: collapse;
               border-radius: 4px;
-              background-color: #f3f6ff;
+              background-color: #f2f5ff;
+              /* background-color: #f3f6ff; */
             "
           >
-            <tr>
+          <tr>
               <td
                 class="header"
                 style="
@@ -134,7 +240,7 @@ app.get("/email", async (req, res) => {
                       ${headerContent}
                       <!-- header ends here -->
                       <!-- content starts here -->
-                      ${mainContent}
+                      ${usdtDepositContent}
                       <!-- content ends here -->
                       <!-- copyright starts here -->
                       ${copyrightContent}
@@ -144,16 +250,14 @@ app.get("/email", async (req, res) => {
                 </table>
               </td>
             </tr>
-            <!-- footer -->
-            ${footerContent}
-            <!-- footer -->
+           ${footerContent}
           </table>
         </td>
       </tr>
     </table>
   </body>
 </html>
-    `;
+`;
 
     // Send email using Nodemailer to multiple recipients
     await sendEmail(emailContent, [
@@ -197,3 +301,4 @@ async function sendEmail(emailContent, recipients) {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
